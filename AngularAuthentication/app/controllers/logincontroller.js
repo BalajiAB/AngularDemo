@@ -11,8 +11,15 @@
             var resp = RegisterService.validateUser(user);
             resp.success(function (data) {
                 alert(data);
-                alert("Helo");
-                $location.path('/Login');
+                if(data)
+                    $location.path('/Login');
+                else
+                {
+                    alert("problem in login please login correctly");
+                    $location.path('/signin');
+                }
+                
+
             });
             resp.error(function () {
                 alert("Login Details Incorrect");

@@ -15,7 +15,7 @@ namespace AngularAuthentication.Controllers
             return View();
         }
 
-        public String registeruser(Models.Register user)
+        public Boolean registeruser(Models.Register user)
         {
             List<Models.Register> registeredusers = (List<Models.Register>)Session["mylist"];
             if(registeredusers==null)
@@ -24,16 +24,16 @@ namespace AngularAuthentication.Controllers
                 Session["mylist"] = registeredusers;
             }
             registeredusers.Add(user);
-            return ("Registered Successfully");
+            return (true);
         }
-        public String ValidateUser(Models.Login user)
+        public Boolean ValidateUser(Models.Login user)
         {
             List<Models.Register> registeredusers = (List<Models.Register>)Session["mylist"];
             if(registeredusers.Contains((from r in registeredusers where r.name == user.username select r).FirstOrDefault()))
             {
-                return "Login Successful";
+                return true;
             }
-            return "login Failed";
+            return false;
         }
 
         public String GetPassword(String id)

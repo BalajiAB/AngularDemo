@@ -82,6 +82,7 @@
     <Content Include="app\controllers\logincontroller.js" />
     <Content Include="app\controllers\registercontroller.js" />
     <Content Include="app\services\registerservice.js" />
+    <Content Include="app\views\default.html" />
     <Content Include="app\views\forgotpassword.html" />
     <Content Include="app\views\Homepage.html" />
     <Content Include="app\views\login.html" />

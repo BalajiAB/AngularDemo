@@ -13,7 +13,6 @@
              var resp = RegisterService.addUser(user);
              resp.success(function (data) {
                  alert(data);
-                 alert("Helo");
                  $location.path('/signin');
              });
              resp.error(function () {

@@ -1,23 +1,46 @@
 ﻿
 <h3>Register Page</h3>
 
-<form class="form-horizontal ng-pristine ng-valid" role="form" ng-submit="RegisterUser()">
+<form class="form-horizontal ng-pristine ng-valid" name="form1" role="form" ng-submit="RegisterUser()">
     <div class="form-group">
         <label class="col-md-2 control-label">Name</label>
         <div class="col-md-4">
-            <input type="text" class="form-control ng-pristine ng-valid" name="name" ng-model="name">
+            <input type="text" class="form-control ng-pristine ng-valid" ng-minlength="4" name="name" ng-model="name" required>
+            <div class="error" ng-show="form1.name.$dirty && form1.name.$invalid">
+                <small class="error" ng-show="form1.name.$error.required">
+                    Your name is required.
+                </small>
+                <small class="error" ng-show="form1.name.$error.minlength">
+                    Your name is required to be at least 3 characters
+                </small>
+                
+            </div>
         </div>
     </div>
     <div class="form-group">
         <label class="col-md-2 control-label">Password</label>
         <div class="col-md-4">
-            <input type="password" class="form-control ng-pristine ng-valid" name="employees" ng-model="password">
+            <input type="password" class="form-control ng-pristine ng-valid" name="employees" ng-model="password" required>
         </div>
     </div>
     <div class="form-group">
         <label class="col-md-2 control-label">Email</label>
         <div class="col-md-4">
-            <input type="text" class="form-control ng-pristine ng-valid" name="headoffice" ng-model="email">
+            <input type="email" class="form-control ng-pristine ng-valid" name="email" ng-model="email" required>
+            <div class="error-container" ng-show="form1.email.$dirty && form1.email.$invalid">
+                <small class="error" ng-show="form1.email.$error.required">
+                    Your email is required.
+                </small>
+                <small class="error" ng-show="form1.email.$error.minlength">
+                    Your email is required to be at least 3 characters
+                </small>
+                <small class="error" ng-show="form1.email.$error.email">
+                    That is not a valid email. Please input a valid email.
+                </small>
+                <small class="error" ng-show="form1.email.$error.maxlength">
+                    Your email cannot be longer than 20 characters
+                </small>
+            </div>
         </div>
     </div>
     <div class="form-group">

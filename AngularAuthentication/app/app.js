@@ -3,7 +3,11 @@
 
     app.config(function ($routeProvider) {
         $routeProvider.
-        when("/", {
+        when("/",{
+            controller:"",
+            templateUrl:"app/views/default.html"
+        })
+        .when("/Register", {
             controller: "RegisterController",
             templateUrl: "app/views/register.html"
         })
