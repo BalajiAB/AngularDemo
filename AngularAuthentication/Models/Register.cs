@@ -11,7 +11,7 @@ namespace AngularAuthentication.Models
         public string password { get; set; }
         public string email { get; set; }
     }
-
+    // just writing casual
     public class Login
     {
         public string username { get; set; }
